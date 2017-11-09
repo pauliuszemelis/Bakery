@@ -91,7 +91,130 @@
 				<td>5</td>
 				<td>7</td>
 			</tr>
+		</script>
 		</tbody>
 	</table>
+<script type="text/javascript">
+	/*var diena;
+	var pavadinimas;
+	var VL;
+	var PG;
+	var PR;
+	var SG;
+	var GL;
+	var prekes = {
+		"diena": diena,
+		"pavadinimas":pavadinimas,
+		"kiekis": 	{
+					"VL": VL,
+					"PG": PG,
+					"PR": PR,
+					"SG": SG,
+					"GL": GL
+					}
+				}
+*/
+//option 1 
+var _arrayOfObjects = [
+	{
+		"date":"2017-11-09",
+		"product":"Aguonėlė",
+		"data": [5,	25,	20,	5, 5]
+	},
+	{
+		"date":"2017-11-10",
+		"product":"Aguonėlė",
+		"data": [5,	25,	20,	5, 5]
+	}	
+];
+
+// option 2
+var _objectByDay = {
+	"2017-11-09":
+	[
+	{	
+		"product":"Aguonėlė",
+		"data": [5,	25,	20,	5, 5]
+	},
+	{	
+		"product":"Persikas",
+		"data": [5,	25,	20,	5, 5]
+	}
+	]
+}
+
+//option 3 
+
+var _objectByProduct = {
+	"Aguonėlė":
+	[
+	{	
+		"date":"2017-11-09",
+		"data": [5,	25,	20,	5, 5]
+	},
+	{	
+		"date":"2017-11-10",
+		"data": [5,	25,	20,	5, 5]
+	}
+	]
+}
+// option 4
+var _optimisedByDate = {
+	"2017-11-09":
+		{	
+		"Aguonėlė": [5,	25,	20,	5, 5],
+		"Persikas": [5,	25,	20,	5, 5]
+		}
+						};
+
+// option 5
+
+var _optimisedByProduct = {
+	"Aguonėlė":
+		{	
+		"2017-11-09": [5,	25,	20,	5, 5],
+		"2017-11-10": [5,	25,	20,	5, 5]
+		}
+						};
+
+var _products = {
+	"p-1": "Aguonėlė",
+	"p-2": "Persikas"
+}
+
+
+var _finalByProduct = {
+	"p-1":
+		{
+		"2017-11-09": [5,	25,	20,	5, 5],
+		"2017-11-10": [5,	25,	20,	5, 5]
+		},
+	"p-2":
+		{
+		"2017-11-09": [5,	25,	20,	5, 5],
+		"2017-11-10": [5,	25,	20,	5, 5]
+		},
+	}
+
+var _finalByDate = {
+	"p-1":
+		{
+		"2017-11-09": [5,	25,	20,	5, 5],
+		"2017-11-10": [5,	25,	20,	5, 5]
+		},
+	"p-2":
+		{
+		"2017-11-09": [5,	25,	20,	5, 5],
+		"2017-11-10": [5,	25,	20,	5, 5]
+		},
+	}
+}
+console.log(_arrayOfObjects);
+console.log(_objectByDay);
+console.log(_objectByProduct);
+console.log(_optimisedByDate);
+console.log(_optimisedByProduct);
+
+</script>
 </body>
 </html>
