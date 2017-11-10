@@ -208,7 +208,7 @@ var _finalByDate = {
 		"2017-11-10": [5, 25, 20, 5, 5]
 		},
 	}
-}
+	
 console.log(_arrayOfObjects);
 console.log(_objectByDay);
 console.log(_objectByProduct);
