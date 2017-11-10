@@ -1,3 +1,28 @@
 
 
-thead {background-color: lightgray;}
+thead {
+	background-color: #F5DEB3; 
+	text-align: center
+}
+
+tbody {
+	text-align: center;
+}
+
+table, th, td {
+	border: 1px solid black;
+}
+
+.bodis tr:hover {
+    background-color:#BCD2E5 !important;
+}
+
+.bodis tr:nth-child(odd) {
+    background-color: #F3FAFF;
+}
+
+.bodis tr:nth-child(even) {
+    background-color: #FFFFFF;
+}
+
+.pava text-align: left;

@@ -5,8 +5,8 @@
 	<link rel="stylesheet" type="text/css" href="css/app.css">
 </head>
 <body>
-	<table id="prekes" border=1px >
-		<thead align="center">
+	<table>
+		<thead>
 			<tr>
 				<th rowspan="2">Pavadinimas</th>
 				<th colspan="5">2017-11-09</th>
@@ -25,9 +25,9 @@
 				<th>GL</th>	<!-- Galutinis likutis -->
 			</tr>	
 		</thead>
-		<tbody>
+		<tbody class="bodis">
 			<tr>
-				<td>Bandelė "Aguonėlė"</td>
+				<td align="left">Bandelė "Aguonėlė"</td>
 				<td>5</td>
 				<td>25</td>
 				<td>20</td>
@@ -40,7 +40,7 @@
 				<td>5</td>
 			</tr>
 			<tr>
-				<td>Duona "Balta"</td>
+				<td align="left">Duona "Balta"</td>
 				<td>3</td>
 				<td>27</td>
 				<td>15</td>
@@ -53,7 +53,7 @@
 				<td>5</td>
 			</tr>
 			<tr>
-				<td>Duona "Juoda"</td>
+				<td align="left">Duona "Juoda"</td>
 				<td>4</td>
 				<td>24</td>
 				<td>27</td>
@@ -66,7 +66,7 @@
 				<td>1</td>
 			</tr>
 			<tr>
-				<td>Duona "Ruginė"</td>
+				<td align="left">Duona "Ruginė"</td>
 				<td>6</td>
 				<td>24</td>
 				<td>25</td>
@@ -79,7 +79,7 @@
 				<td>3</td>
 			</tr>
 			<tr>
-				<td>Bandelė "Persikas"</td>
+				<td align="left">Bandelė "Persikas"</td>
 				<td>7</td>
 				<td>25</td>
 				<td>20</td>
@@ -186,26 +186,26 @@ var _products = {
 var _finalByProduct = {
 	"p-1":
 		{
-		"2017-11-09": [5,	25,	20,	5, 5],
-		"2017-11-10": [5,	25,	20,	5, 5]
+		"2017-11-09": [5, 25, 20, 5, 5],
+		"2017-11-10": [5, 25, 20, 5, 5]
 		},
 	"p-2":
 		{
-		"2017-11-09": [5,	25,	20,	5, 5],
-		"2017-11-10": [5,	25,	20,	5, 5]
+		"2017-11-09": [5, 25, 20, 5, 5],
+		"2017-11-10": [5, 25, 20, 5, 5]
 		},
 	}
 
 var _finalByDate = {
 	"p-1":
 		{
-		"2017-11-09": [5,	25,	20,	5, 5],
-		"2017-11-10": [5,	25,	20,	5, 5]
+		"2017-11-09": [5, 25, 20, 5, 5],
+		"2017-11-10": [5, 25, 20, 5, 5]
 		},
 	"p-2":
 		{
-		"2017-11-09": [5,	25,	20,	5, 5],
-		"2017-11-10": [5,	25,	20,	5, 5]
+		"2017-11-09": [5, 25, 20, 5, 5],
+		"2017-11-10": [5, 25, 20, 5, 5]
 		},
 	}
 }
