@@ -1,5 +1,5 @@
 <?php
 
-@include_once('model/bakery-data.php');
+$data = @include_once('model/bakery-data.php');
 
-var_dump($data);
+@include_once('view/data-table.php');
