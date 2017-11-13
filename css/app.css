@@ -1,28 +1,9 @@
 
 
-thead {
-	background-color: #F5DEB3; 
-	text-align: center
-}
-
-tbody {
-	text-align: center;
-}
-
-table, th, td {
-	border: 1px solid black;
-}
-
-.bodis tr:hover {
-    background-color:#BCD2E5 !important;
-}
-
-.bodis tr:nth-child(odd) {
-    background-color: #F3FAFF;
-}
-
-.bodis tr:nth-child(even) {
-    background-color: #FFFFFF;
-}
-
-.pava text-align: left;
+table, th, td {border: 1px solid black}
+thead {background-color: #99ccff; text-align: center}
+tbody {text-align: center}
+tbody tr:nth-child(odd) {background-color: #ffffe6}
+tbody tr:nth-child(even) {background-color: #e6ffe6}
+tbody tr:hover {background-color: lightgray}
+tbody td:hover {background-color: #b3b3b3}

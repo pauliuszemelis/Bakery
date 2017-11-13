@@ -27,7 +27,7 @@
 		</thead>
 		<tbody class="bodis">
 			<tr>
-				<td align="left">Bandelė "Aguonėlė"</td>
+				<td align="left"><b>Bandelė "Aguonėlė"</b></td>
 				<td>5</td>
 				<td>25</td>
 				<td>20</td>
@@ -40,7 +40,7 @@
 				<td>5</td>
 			</tr>
 			<tr>
-				<td align="left">Duona "Balta"</td>
+				<td align="left"><b>Duona "Balta"</b></td>
 				<td>3</td>
 				<td>27</td>
 				<td>15</td>
@@ -53,7 +53,7 @@
 				<td>5</td>
 			</tr>
 			<tr>
-				<td align="left">Duona "Juoda"</td>
+				<td align="left"><b>Duona "Juoda"</b></td>
 				<td>4</td>
 				<td>24</td>
 				<td>27</td>
@@ -66,7 +66,7 @@
 				<td>1</td>
 			</tr>
 			<tr>
-				<td align="left">Duona "Ruginė"</td>
+				<td align="left"><b>Duona "Ruginė"</b></td>
 				<td>6</td>
 				<td>24</td>
 				<td>25</td>
@@ -79,7 +79,7 @@
 				<td>3</td>
 			</tr>
 			<tr>
-				<td align="left">Bandelė "Persikas"</td>
+				<td align="left"><b>Bandelė "Persikas"</b></td>
 				<td>7</td>
 				<td>25</td>
 				<td>20</td>
