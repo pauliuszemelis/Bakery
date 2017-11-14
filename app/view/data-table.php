@@ -6,6 +6,17 @@ foreach ($data as $key => $value) {
 					$keys .= "<th>VL</th><th>PG</th><th>PR</th><th>SG</th><th>GL</th>";
 						//echo '<th colspan="5">'.$key.'</th>'; -- antras variantas
 					};
+
+
+foreach ($value as $name => $data) {
+	//name 			//data
+	"Aguonėlė" => [5, 25, 20, 5, 5],
+		
+		foreach ($data as $amount) {
+			# code...
+		}}
+
+
 				?>
 <table>
 		<thead>
