@@ -7,7 +7,7 @@ foreach ($data as $key => $value) {
 						//echo '<th colspan="5">'.$key.'</th>'; -- antras variantas
 					};
 
-/*
+
 foreach ($value as $name => $data) {
 	//name 			//data
 	"Aguonėlė" => [5, 25, 20, 5, 5],
@@ -15,7 +15,7 @@ foreach ($value as $name => $data) {
 		foreach ($data as $amount) {
 			# code...
 		}}
-*/
+
 
 				?>
 <table>
