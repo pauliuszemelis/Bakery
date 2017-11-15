@@ -34,8 +34,7 @@ foreach ($data as $key => $value) {
     
 
     foreach ($arr as $key => $value) {
-        echo "<tr>";
-        echo "<td align=\"left\"><b>" . $key . "</b></td>";
+        echo "<tr><td align=\"left\"><b>" . $key . "</b></td>";
         foreach ($value as $data) {
             foreach ($data as $amount) {
                 echo "<td>" . $amount . "</td>";
