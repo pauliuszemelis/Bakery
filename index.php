@@ -5,6 +5,9 @@
 	<link rel="stylesheet" type="text/css" href="css/app.css">
 </head>
 <body>
+
+
+	<a href="./new.php">Įvesti naujos dienos duomenis</a>
 	<table id="hand-made">
 		<thead>
 			<tr>
