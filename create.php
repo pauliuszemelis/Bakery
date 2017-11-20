@@ -3,12 +3,17 @@
 $new_data = ($_POST);
 
 
+//todo
+//patikrinti ar visi parametrai pateikti
+
+
 $existing_data = json_decode(file_get_contents('data/bakery-data.json'));
 
 $existing_data = objectToArray($existing_data);
 
 updateDate($existing_data, $new_data);
-//((array)$existing_data);
+
+file_put_contents('data/bakery-data.json', json_encode($existing_data));
 
 
 function objectToArray (stdClass $obj) : array {
@@ -29,11 +34,6 @@ function objectToArray (stdClass $obj) : array {
 	return $obj;
 	
 }
-//var_dump($existing_data);
-//var_dump($new_data);
-//print_r($existing_data);
-//print_r($new_data);
-
 
 function updateDate (&$existing_data, $new_data) {
 
@@ -45,25 +45,31 @@ function updateDate (&$existing_data, $new_data) {
 		}
 		
 		else {
-			echo "Produktas suvestas sėkmingai.<br>\r\n";
-			//print_r ($existing_data[$new_data["Data"]]["1"]);
+			
+		$existing_data = createProduct($existing_data, $new_data);	
+		echo "Produktas suvestas sėkmingai.<br>\r\n";
 		}	
 	}
 
 	else {
 
 		$existing_data[$new_data["Data"]] = [];
-		$existing_data[$new_data["Data"]][$new_data["product"]] = [
-			$new_data["VL"],
-			$new_data["PG"],
-			$new_data["PR"],
-			$new_data["SG"],
-			$new_data["GL"],
-			];
+		$existing_data = createProduct($existing_data, $new_data);
 
 		echo "Nauja diena ir produktas suvesti sėkmingai.<br>\r\n";
 	}
 
+}
+
+function createProduct ($existing_data, $new_data) {
+			$existing_data[$new_data["Data"]][$new_data["product"]] = [
+			(int) $new_data["VL"],
+			(int) $new_data["PG"],
+			(int) $new_data["PR"],
+			(int) $new_data["SG"],
+			(int) $new_data["GL"],
+			];
+		return $existing_data;
 }
 
 
