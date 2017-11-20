@@ -51,11 +51,24 @@ function updateDate (&$existing_data, $new_data) {
 	}
 
 	else {
+
+		$existing_data[$new_data["Data"]] = [];
+		$existing_data[$new_data["Data"]][$new_data["product"]] = [
+			$new_data["VL"],
+			$new_data["PG"],
+			$new_data["PR"],
+			$new_data["SG"],
+			$new_data["GL"],
+			];
+
 		echo "Nauja diena ir produktas suvesti sėkmingai.<br>\r\n";
 	}
 
 }
 
-//echo $new_data["Data"] . "<br>";
-//echo $new_data["product"];
 
+
+/*
+"Paulius Žemelis" => ["c", "a", "a", "a", "b", "a", "d", "d", "b", "c", "b", "a", "a", "c", "a", "c", "a", "b", "c", "b", "a", "a", "a", "c", "d", "a"];
+
+*/

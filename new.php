@@ -10,11 +10,11 @@
 	<div>Data:</div><input type="date" name="Data">
 	<div >Prekė:</div>
 		<select name="product">
-		<option value="1">Bandelė "Aguonėlė"</option>
-		<option value="2">Duona "Balta"</option>
-		<option value="3">Duona "Ruginė"</option>
-		<option value="4">Duona "Juoda"</option>
-		<option value="5">Duona "Juoda"</option>
+		<option value="p-1">Bandelė "Aguonėlė"</option>
+		<option value="p-2">Duona "Balta"</option>
+		<option value="p-3">Duona "Ruginė"</option>
+		<option value="p-4">Duona "Juoda"</option>
+		<option value="p-5">Duona "Juoda"</option>
 	</select><br>	
 	<div >Vakarykštis likutis:</div><input type="number" name="VL">
 	<div >Pagaminta:</div><input type="number" name="PG">
