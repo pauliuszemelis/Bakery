@@ -14,14 +14,8 @@ $validData = true;
 		echo '<a href="index.php">Gryžti į pradžią...</a>';
 		return;
 	}
-/*
-	if(empty($_POST["VL"]) || empty($_POST["PG"]) || empty($_POST["PR"]) || empty($_POST["SG"]) || empty($_POST["GL"])) {
-		Echo "Ne visi laukai užpildyti, duomenys nesuvesti...<br><br>";
-		echo '<a href="index.php">Gryžti į pradžią...</a>';
-		return;
-}*/
 
-$existing_data = json_decode(file_get_contents('data/bakery-data.json'));
+$existing_data = json_decode(file_get_contents('data/bakery-data.json'), true);
 
 $existing_data = objectToArray($existing_data);
 
