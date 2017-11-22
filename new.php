@@ -22,8 +22,8 @@
 	<div >Sugadinta:</div><input type="number" name="SG">
 	<div >Galutinis likutis:</div><input type="number" name="GL">
 	<br><input type="submit" value="Išsaugoti duomenis">
-</form>
-	
 	</form>
+	<br/>
+	<a href="index.php">Gryžti i pradžią...</a>
 </body>
 </html>

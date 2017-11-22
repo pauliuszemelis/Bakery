@@ -2,6 +2,11 @@
 
 $new_data = ($_POST);
 
+if(empty($_POST["VL"]) || empty($_POST["PG"]) || empty($_POST["PR"]) || empty($_POST["SG"]) || empty($_POST["GL"])) {
+		Echo "Ne visi laukai užpildyti, duomenys nesuvesti...<br><br>";
+		echo '<a href="index.php">Gryžti į pradžią...</a>';
+		return;
+}
 
 //todo
 //patikrinti ar visi parametrai pateikti
@@ -38,8 +43,7 @@ function objectToArray (stdClass $obj) : array {
 function updateDate (&$existing_data, $new_data) {
 
 	if(isset($existing_data[$new_data["Data"]])) {
-		echo "Tokia diena egzistuoja<br>\r\n";
-		
+				
 		if(isset($existing_data[$new_data["Data"]][$new_data["product"]])) {
 			echo "Toks produktas jau yra suvestas.<br>\r\n";
 		}
@@ -72,7 +76,7 @@ function createProduct ($existing_data, $new_data) {
 		return $existing_data;
 }
 
-
+echo '<a href="index.php">Gryžti į pradžią...</a>';
 
 /*
 "Paulius Žemelis" => ["c", "a", "a", "a", "b", "a", "d", "d", "b", "c", "b", "a", "a", "c", "a", "c", "a", "b", "c", "b", "a", "a", "a", "c", "d", "a"];
