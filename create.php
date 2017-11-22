@@ -1,14 +1,18 @@
 <?php
 
 $new_data = ($_POST);
+$required_fields = ["Data", "product", "VL", "PG", "PR", "SG", "GL"];
+$validData = true;
 
-
-	foreach ($_POST as $key => $value) {
-		if(empty($value)){
-			Echo "Ne visi laukai užpildyti, duomenys nesuvesti...<br><br>";
-			echo '<a href="index.php">Gryžti į pradžią...</a>';
-			return;
+	foreach ($required_fields as $value) {
+		if(!isset($new_data[$value]) || empty($new_data[$value] )){
+			$validData = false;
+			Echo "Laukas \"$value\" neužpildytas, duomenys nesuvesti...<br><br>";
 		}
+	}
+	if(!$validData){
+		echo '<a href="index.php">Gryžti į pradžią...</a>';
+		return;
 	}
 /*
 	if(empty($_POST["VL"]) || empty($_POST["PG"]) || empty($_POST["PR"]) || empty($_POST["SG"]) || empty($_POST["GL"])) {
