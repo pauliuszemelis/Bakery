@@ -17,13 +17,13 @@ $validData = true;
 
 $existing_data = json_decode(file_get_contents('data/bakery-data.json'), true);
 
-$existing_data = objectToArray($existing_data);
+//$existing_data = objectToArray($existing_data);
 
 updateDate($existing_data, $new_data);
 
 file_put_contents('data/bakery-data.json', json_encode($existing_data));
 
-
+/*
 function objectToArray (stdClass $obj) : array {
 	
 	$obj = (array) $obj;
@@ -42,7 +42,7 @@ function objectToArray (stdClass $obj) : array {
 	return $obj;
 	
 }
-
+*/
 function updateDate (&$existing_data, $new_data) {
 
 	if(isset($existing_data[$new_data["Data"]])) {
