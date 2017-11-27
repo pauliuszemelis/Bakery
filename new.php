@@ -11,10 +11,19 @@
 	<div >Prekė:</div>
 		<select name="product_id">
 			<?php
-			$options = json_decode(file_get_contents('data/products.json'), true);
-			foreach ($options as $p => $prekes) {
-				echo '<option value="' . $p .'">' . $prekes .'</option>';
+			@include_once('./app/database.php');
+
+			$query = "SELECT `id`, `name` FROM `bakery_products` WHERE `deleted_at` IS NULL ORDER BY `name` ASC ";
+
+$result = db_query($query);
+
+foreach ($result as $key => $value) {
+			
+			
+
+			echo '<option value="' . $value['id'] . '">' . $value['name'] . '</option>';
 			}
+
 			?>
 	</select><br>	
 	<div >Vakarykštis likutis:</div><input type="number" name="initial">
