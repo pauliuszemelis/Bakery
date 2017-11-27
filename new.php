@@ -7,21 +7,21 @@
 <body>
 	
 	<form method="POST" action="create.php"> 
-	<div>Data:</div><input type="date" name="Data">
+	<div>Data:</div><input type="date" name="date">
 	<div >Prekė:</div>
-		<select name="product">
+		<select name="product_id">
 			<?php
-			$products = json_decode(file_get_contents('data/products.json'), true);
-			foreach ($products as $p => $prekes) {
+			$options = json_decode(file_get_contents('data/products.json'), true);
+			foreach ($options as $p => $prekes) {
 				echo '<option value="' . $p .'">' . $prekes .'</option>';
 			}
 			?>
 	</select><br>	
-	<div >Vakarykštis likutis:</div><input type="number" name="VL">
-	<div >Pagaminta:</div><input type="number" name="PG">
-	<div >Parduota:</div>	<input type="number" name="PR">
-	<div >Sugadinta:</div><input type="number" name="SG">
-	<div >Galutinis likutis:</div><input type="number" name="GL">
+	<div >Vakarykštis likutis:</div><input type="number" name="initial">
+	<div >Pagaminta:</div><input type="number" name="produced">
+	<div >Parduota:</div>	<input type="number" name="sold">
+	<div >Sugadinta:</div><input type="number" name="damaged">
+	<div >Galutinis likutis:</div><input type="number" name="closed">
 	<br><input type="submit" value="Išsaugoti duomenis">
 	</form>
 	<br/>
