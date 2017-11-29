@@ -19,8 +19,36 @@ return $conn;
 function db_query(string $query) {
 	$conn = db_connect();
 	$result = $conn->query ($query);
-	$conn->close();
-	return $result;
+	if($result){
+		$conn->close();
+		return $result;
+	}
+		print_r($conn);
+		$conn->close();
+		die();	
+	}
+
+function db_insertQuery (string $tableName, array $data, bool $uuid = false) : string {
+
+	if($uuid)
+		$data['id'] = uniqid();
+
+$keys = $values = '';
+
+foreach ($data as $key => $value) {
+	
+	$keys .="`$key`, ";
+	$values .="'$value', ";
+
+}
+
+$keys = rtrim($keys,", ");
+$values = rtrim($values,", ");
+
+$query = "INSERT INTO `$tableName` ($keys) VALUES ($values)";
+
+return($query);
+
 }
 
 

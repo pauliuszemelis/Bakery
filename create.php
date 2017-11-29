@@ -1,7 +1,7 @@
 <?php
 
 $new_data = ($_POST);
-$required_fields = ["Data", "product", "VL", "PG", "PR", "SG", "GL"];
+$required_fields = ["date", "product_id", "initial", "produced", "sold", "damaged", "closed"];
 $validData = true;
 
 	foreach ($required_fields as $value) {
@@ -15,7 +15,38 @@ $validData = true;
 		return;
 	}
 
-$existing_data = json_decode(file_get_contents('data/bakery-data.json'), true);
+	@include_once('./app/database.php');
+
+	$query = db_insertQuery ('bakery_products_history', $new_data, true);
+
+	$result = db_query($query);
+
+	print_r($result);
+
+
+
+	/*"INSERT INTO `bakery_products_history` (
+	`date`, 
+	`product_id`, 
+	`initial`, 
+	`produced`, 
+	`sold`, 
+	`damaged`, 
+	`closed`) VALUES (".
+	$new_data['date'].",".
+	$new_data['product_id'].",".
+	$new_data['initial'].",".
+	$new_data['produced'].",".
+	$new_data['sold'].",".
+	$new_data['damaged'].",".
+	$new_data['closed'].")";
+
+	die ($query);*/
+
+	$result = db_query($query);
+
+	print_r($new_data);
+/*$existing_data = json_decode(file_get_contents('data/bakery-data.json'), true);
 
 //$existing_data = objectToArray($existing_data);
 
@@ -43,7 +74,7 @@ function objectToArray (stdClass $obj) : array {
 	
 }
 */
-function updateDate (&$existing_data, $new_data) {
+/*function updateDate (&$existing_data, $new_data) {
 
 	if(isset($existing_data[$new_data["Data"]])) {
 				
@@ -78,7 +109,7 @@ function createProduct ($existing_data, $new_data) {
 			];
 		return $existing_data;
 }
-
+*/
 echo '<a href="index.php">Gryžti į pradžią...</a>';
 
 /*
