@@ -23,29 +23,7 @@ $validData = true;
 
 	print_r($result);
 
-
-
-	/*"INSERT INTO `bakery_products_history` (
-	`date`, 
-	`product_id`, 
-	`initial`, 
-	`produced`, 
-	`sold`, 
-	`damaged`, 
-	`closed`) VALUES (".
-	$new_data['date'].",".
-	$new_data['product_id'].",".
-	$new_data['initial'].",".
-	$new_data['produced'].",".
-	$new_data['sold'].",".
-	$new_data['damaged'].",".
-	$new_data['closed'].")";
-
-	die ($query);*/
-
-	$result = db_query($query);
-
-	print_r($new_data);
+	
 /*$existing_data = json_decode(file_get_contents('data/bakery-data.json'), true);
 
 //$existing_data = objectToArray($existing_data);
