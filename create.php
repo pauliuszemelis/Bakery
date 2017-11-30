@@ -5,9 +5,9 @@ $required_fields = ["date", "product_id", "initial", "produced", "sold", "damage
 $validData = true;
 
 	foreach ($required_fields as $value) {
-		if(!isset($new_data[$value]) || empty($new_data[$value] )){
+		if(!isset($new_data[$value]) || strlen($new_data[$value]) < 1 || ($new_data[$value] < 0 )) {
 			$validData = false;
-			Echo "Laukas \"$value\" neužpildytas, duomenys nesuvesti...<br><br>";
+			Echo "Laukas \"$value\" neužpildytas, arba užpildytas neteisingai. Duomenys nesuvesti...<br><br>";
 		}
 	}
 	if(!$validData){
@@ -20,8 +20,9 @@ $validData = true;
 	$query = db_insertQuery ('bakery_products_history', $new_data, true);
 
 	$result = db_query($query);
+	echo "Produktas suvestas sėkmingai.<br>";
 
-	print_r($result);
+	//print_r($result);
 
 	
 /*$existing_data = json_decode(file_get_contents('data/bakery-data.json'), true);
