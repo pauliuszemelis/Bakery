@@ -1,12 +1,17 @@
 <?php
-$days = $keys = '';
-$rows = [];
+$days =  $rows = [];
+$keys = '';
 
 foreach ($productHistory as $value) {
 
-    $days .= '<th colspan=5>'. $value['date'] .'</th>';
-    $keys .= "<th>VL</th><th>PG</th><th>PR</th><th>SG</th><th>GL</th>";
+    if (!isset($days[$value['date']])) {
+            $days[$value['date']] = $value['date'];
+            $keys .= "<th>VL</th><th>PG</th><th>PR</th><th>SG</th><th>GL</th>";
+
+
+    }
     
+    }
 
 
     /*foreach ($products as $key => $name) {
@@ -22,7 +27,7 @@ foreach ($productHistory as $value) {
                     $rows[$key] .= "<td></td><td></td><td></td><td></td><td></td>";
             }
     }*/
-}
+
 
 
 ?>
@@ -32,7 +37,9 @@ foreach ($productHistory as $value) {
         <tr>
             <th width= 120px rowspan="2">Pavadinimas</th>
             <?php
-            echo $days;
+            foreach ($days as $date) {
+        echo '<th colspan="5">'. $date . '</th>';
+            }
             ?>
         </tr>
         <tr>
@@ -42,9 +49,7 @@ foreach ($productHistory as $value) {
         </tr>
     </thead> 
     <?php
-   foreach ($rows as $row) {
-        echo "<tr>" . $row . "";
-            }
+   
     ?>
 
 
