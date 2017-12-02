@@ -10,6 +10,7 @@ $validData = true;
 			Echo "Laukas \"$value\" neužpildytas, arba užpildytas neteisingai. Duomenys nesuvesti...<br><br>";
 		}
 	}
+
 	if(!$validData){
 		echo '<a href="index.php">Gryžti į pradžią...</a>';
 		return;
@@ -20,7 +21,7 @@ $validData = true;
 	$query = db_insertQuery ('bakery_products_history', $new_data, true);
 
 	$result = db_query($query);
-	echo "Produktas suvestas sėkmingai.<br>";
+	echo "Great SUCCESS... Produktas suvestas.<br>";
 
 	//print_r($result);
 
