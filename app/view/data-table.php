@@ -7,7 +7,7 @@ foreach ($products as $value) {
     if(!isset($rows[$value['id']])){
 
         $rows[$value['id']] = [];
-        $rows[$value['id']]['name'] = '<td>' . $value['name'] . '</td>';   
+        $rows[$value['id']]['name'] = '<td align="left" class="pava"><b>' . $value['name'] . '</b></td>';   
     }
 }
 
@@ -31,7 +31,7 @@ foreach ($productHistory as $value) {
 <table>
     <thead>
         <tr>
-            <th width="300px" rowspan="2">Pavadinimas</th>
+            <th rowspan="2">Pavadinimas</th>
             
             <?php
             foreach ($days as $date) {

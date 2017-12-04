@@ -1,9 +1,9 @@
 
-#hand-made {display:none}
 table, th, td {border: 1px solid black}
+.pava th {width: 150px}
 thead {background-color: #99ccff; text-align: center}
 tbody {text-align: center}
 tbody tr:nth-child(odd) {background-color: #ffffe6}
 tbody tr:nth-child(even) {background-color: #e6ffe6}
 tbody tr:hover {background-color: lightgray}
-tbody td:hover {background-color: #b3b3b3}
+tbody td:hover {background-color: #b3b3b3} 
