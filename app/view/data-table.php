@@ -11,6 +11,7 @@ foreach ($products as $value) {
     }
 }
 
+
 foreach ($productHistory as $value) {
 
     if (!isset($days[$value['date']])) {
