@@ -6,7 +6,7 @@
 </head>
 <body>
 
-	<form method="POST" action="create.php">
+	<form method="POST" action="?view=product&action=create">
         <div >Pavadinimas:</div><input type="text" name="name"><br>
         <div>EAN:</div><input type="number" name="ean">
         <div>Mato vienetas:</div>
