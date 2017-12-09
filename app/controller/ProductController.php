@@ -11,6 +11,7 @@ class ProductController
     public function create(): string
     {
         return file_get_contents('app\view\product\new.php');
+
     }
 
     public function store(): string
@@ -27,20 +28,6 @@ class ProductController
         exit;
 
     }
-
-    public function DDlist()
-    {
-        $model = new Product();
-        $result = $model->list();
-
-        foreach ($result as $item) {
-
-            foreach ($item as $key => $value) {
-                    $listOfProducts .= '<option value="name">'. $key . '</option>';
-                    echo $listOfProducts;
-                }
-            }
-        }
 
     public function list()
     {

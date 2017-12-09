@@ -24,8 +24,9 @@ class Bakery
                     break;
                 case 'product_history':
 
-                    if ($action == 'new')
+                    if ($action == 'new'){
                         $this->show((new ProductHistoryController())->create());
+                    }
                     elseif ($action = 'list')
                         (new ProductHistoryController())->list();
                     break;

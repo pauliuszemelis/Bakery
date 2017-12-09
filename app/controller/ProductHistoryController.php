@@ -20,6 +20,7 @@ class ProductHistoryController
 
         $model = new ProductHistory();
         $model->create($_POST);
+        print_r($model);
 
         header('Location: ?view=product_history&action=list');
         exit;
