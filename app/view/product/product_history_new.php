@@ -13,6 +13,9 @@
     <br><br><input type="submit" class="btn btn-secondary" value="Išsaugoti duomenis">
 </form>
 </div>
+<?php
+echo get_class_methods(\app\ProductController::class);
+?>
 
 <!--<a href="index.php">Gryžti i pradžią...</a>-->
 

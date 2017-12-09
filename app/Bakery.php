@@ -41,6 +41,7 @@ class Bakery
 
                         break;
                     }
+                    break;
                 case 'product_history':
 
                     if ($action == 'create') {
@@ -48,6 +49,7 @@ class Bakery
 
                         break;
                     }
+                    break;
             }
         }
 

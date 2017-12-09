@@ -13,6 +13,7 @@ class CoreModel
     private $conn;
 
     protected $table;
+    static $listOfProducts = '';
 
     public function __construct()
     {

@@ -28,6 +28,20 @@ class ProductController
 
     }
 
+    public function DDlist()
+    {
+        $model = new Product();
+        $result = $model->list();
+
+        foreach ($result as $item) {
+
+            foreach ($item as $key => $value) {
+                    $listOfProducts .= '<option value="name">'. $key . '</option>';
+                    echo $listOfProducts;
+                }
+            }
+        }
+
     public function list()
     {
         $model = new Product();
