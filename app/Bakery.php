@@ -19,15 +19,15 @@ class Bakery
 
                     if ($action == 'new')
                         $this->show((new ProductController())->create());
-                    elseif ($action='list')
+                    elseif ($action = 'list')
                         (new ProductController())->list();
-                        break;
-                case 'products_history':
+                    break;
+                case 'product_history':
 
                     if ($action == 'new')
-                        $this->show((new ProductController())->create());
-                    elseif ($action='list')
-                        (new ProductController())->list();
+                        $this->show((new ProductHistoryController())->create());
+                    elseif ($action = 'list')
+                        (new ProductHistoryController())->list();
                     break;
             }
         } elseif
@@ -41,13 +41,20 @@ class Bakery
 
                         break;
                     }
+                case 'product_history':
+
+                    if ($action == 'create') {
+                        $this->show((new ProductHistoryController())->store());
+
+                        break;
+                    }
             }
         }
-    }
 
-
-    private function show(string $text)
-    {
-        echo $text;
     }
-}
+        private
+        function show(string $text)
+        {
+            echo $text;
+        }
+    }
