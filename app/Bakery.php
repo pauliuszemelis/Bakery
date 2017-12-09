@@ -22,6 +22,13 @@ class Bakery
                     elseif ($action='list')
                         (new ProductController())->list();
                         break;
+                case 'products_history':
+
+                    if ($action == 'new')
+                        $this->show((new ProductController())->create());
+                    elseif ($action='list')
+                        (new ProductController())->list();
+                    break;
             }
         } elseif
         ($method == 'POST') {

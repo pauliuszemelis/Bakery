@@ -51,7 +51,7 @@ class ProductController
             }
             $data .= '</tr>';
         }
-        echo "<table><thead><tr>";
+        echo "<table class='table table-bordered'><thead><tr>";
         echo $header;
         echo "</tr></thead><tbody>";
         echo $data;

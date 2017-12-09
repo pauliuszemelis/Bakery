@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Naujas produktas</title>
-	<link rel="stylesheet" type="text/css" href="css/app.css">
-</head>
-<body>
 
+<div style="text-align: center">
 	<form method="POST" action="?view=product&action=create">
         <div >Pavadinimas:</div><input type="text" name="name"><br>
         <div>EAN:</div><input type="number" name="ean">
@@ -16,10 +10,8 @@
         </select><br>
         <div >Svoris:</div><input step="0.001" type="number" name="weight"><br>
         <div >Savikaina:</div>	<input type="number" step="0.001" name="prime_cost"><br>
-        <div >Pardavimo kaina:</div><input type="number" step="0.001" name="sale_price"><br>
-	<br><input type="submit" value="Išsaugoti duomenis"><br>
+        <div >Pardavimo kaina:</div><input type="number" step="0.001" name="sale_price"><br><br>
+	<input type="submit" class="btn btn-secondary" value="Išsaugoti duomenis"><br>
 	</form><br>
-
+</div>
 <!--	<a href="index.php">Gryžti i pradžią...</a>-->
-</body>
-</html>
