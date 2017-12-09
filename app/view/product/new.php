@@ -12,7 +12,7 @@
         <div>Mato vienetas:</div>
         <select name="unit">
             <option value="KG">KG</option>
-            <option value="VNT">VNT</option>
+            <option value="PCS">VNT</option>
         </select><br>
         <div >Svoris:</div><input step="0.001" type="number" name="weight"><br>
         <div >Savikaina:</div>	<input type="number" step="0.001" name="prime_cost"><br>
