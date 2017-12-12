@@ -14,7 +14,6 @@ class CoreModel
 
     protected $table;
 
-
     public function __construct()
     {
         if (!$this->table)
@@ -75,4 +74,11 @@ class CoreModel
         return $this->query($query);
 
     }
+    public function DDlist (){
+        $query = "SELECT `name`,`id` FROM `bakery_products`";
+        return $this->query($query);
+
+    }
+
 }
+

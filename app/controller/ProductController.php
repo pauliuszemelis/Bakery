@@ -3,15 +3,16 @@
 
 namespace app;
 
-
+use app\controller\TemplateEngineController;
 use app\model\Product;
 
 class ProductController
 {
-    public function create(): string
+    public function create()
     {
-        return file_get_contents('app\view\product\new.php');
-
+        $template = new TemplateEngineController('new-product');
+        $template->echoOutput();
+        //(new TemplateEngineController('new-product'))->echoOutput;
     }
 
     public function store(): string
@@ -52,10 +53,12 @@ class ProductController
             }
             $data .= '</tr>';
         }
-        echo "<table class='table table-bordered'><thead><tr>";
-        echo $header;
-        echo "</tr></thead><tbody>";
-        echo $data;
-        echo '</tbody></<table>';
+
+        $template = new TemplateEngineController('table-list');
+        $template->set('header', $header);
+        $template->set('data', $data);
+
+        $template->echoOutput();
+
     }
 }

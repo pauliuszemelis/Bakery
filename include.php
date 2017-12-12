@@ -1,6 +1,7 @@
 <?php
 
 include ('app\Bakery.php');
+include ('app\controller\TemplateEngineController.php');
 include ('app\controller\ProductController.php');
 include ('app\controller\ProductHistoryController.php');
 

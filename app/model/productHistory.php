@@ -13,7 +13,7 @@ class ProductHistory extends CoreModel implements Manageable, Destroyable
     {
 
         //die();
-        $query = $this->generateInsertQuery($data);
+        $query = $this->generateInsertQuery($data, true);
         print_r($this->query($query));
 
     }

@@ -3,15 +3,27 @@
 
 namespace app;
 
-
+use app\controller\TemplateEngineController;
 use app\model\productHistory;
 
 class ProductHistoryController
 {
-    public function create(): string
+    public function create()
     {
-        return file_get_contents('app\view\product\product_history_new.php');
+        $model = new ProductHistory();
+        $result = $model->DDlist();
+        $menu = '';
+
+        foreach ($result as $key => $item) {
+            $menu .= '<option value="' . $item['id'] . '">' . $item['name'] . '</option>';
+
+        }
+        $template = new TemplateEngineController('new-product-history');
+        $template->set('menu', $menu);
+
+        $template->echoOutput();
     }
+
 
     public function store(): string
     {
@@ -50,10 +62,11 @@ class ProductHistoryController
             }
             $data .= '</tr>';
         }
-        echo "<table class='table table-bordered'><thead><tr>";
-        echo $header;
-        echo "</tr></thead><tbody>";
-        echo $data;
-        echo '</tbody></<table>';
+        $template = new TemplateEngineController('table-list');
+        $template->set('header', $header);
+        $template->set('data', $data);
+
+        $template->echoOutput();
+
     }
 }

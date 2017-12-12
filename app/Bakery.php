@@ -18,17 +18,17 @@ class Bakery
                 case 'product':
 
                     if ($action == 'new')
-                        $this->show((new ProductController())->create());
+                        (new ProductController())->create();
                     elseif ($action = 'list')
                         (new ProductController())->list();
                     break;
                 case 'product_history':
 
                     if ($action == 'new'){
-                        $this->show((new ProductHistoryController())->create());
+                        (new ProductHistoryController())->create();
                     }
-                    elseif ($action = 'list')
-                        (new ProductHistoryController())->list();
+                    elseif ($action = 'list'){
+                        (new ProductHistoryController())->list();}
                     break;
             }
         } elseif
