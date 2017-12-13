@@ -3,20 +3,19 @@
 
 namespace app\controller;
 
-
 class TemplateEngineController
 {
     /**
      * @var string
      */
-    private $vieName;
+    private $viewName;
 
     private $values = [];
 
-    public function __construct(string $vieName)
+    public function __construct(string $viewName)
     {
 
-        $this->vieName = "app/view/tpl/$vieName.tpl";
+        $this->viewName = "app/view/tpl/$viewName.tpl";
     }
 
     public function set (string $key, string $value) {
@@ -26,11 +25,11 @@ class TemplateEngineController
     public function echoOutput()
     {
         //check if file exists
-        if(!file_exists($this->vieName)){
-           die("Error loading file ($this->viewName");
+        if(!file_exists($this->viewName)){
+           die("Error loading file ($this->viewName)");
         }
         //read file
-        $output = file_get_contents($this->vieName);
+        $output = file_get_contents($this->viewName);
 
         //replace all tags with values
 

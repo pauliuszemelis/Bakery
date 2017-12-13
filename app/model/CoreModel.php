@@ -74,11 +74,5 @@ class CoreModel
         return $this->query($query);
 
     }
-    public function DDlist (){
-        $query = "SELECT `name`,`id` FROM `bakery_products`";
-        return $this->query($query);
-
-    }
-
 }
 

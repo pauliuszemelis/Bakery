@@ -4,28 +4,37 @@
 namespace app;
 
 use app\controller\TemplateEngineController;
+use app\model\Product;
 use app\model\productHistory;
 
 class ProductHistoryController
 {
     public function create()
     {
-        $model = new ProductHistory();
-        $result = $model->DDlist();
+
+        $template = new TemplateEngineController('new-product-history');
+
+        $menu = $this->getProductOptions();
+
+        $template->set('menu', $menu);
+
+        $template->echoOutput();
+    }
+
+    public function getProductOptions() : string
+    {
+        $result = (new Product())->list();
         $menu = '';
 
         foreach ($result as $key => $item) {
             $menu .= '<option value="' . $item['id'] . '">' . $item['name'] . '</option>';
 
         }
-        $template = new TemplateEngineController('new-product-history');
-        $template->set('menu', $menu);
-
-        $template->echoOutput();
+        return $menu;
     }
 
 
-    public function store(): string
+    public function store()
     {
         //Product::create($_POST);
         //(new Product())->($_POST);

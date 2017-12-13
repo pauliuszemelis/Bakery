@@ -3,6 +3,9 @@
 namespace app;
 
 
+use app\controller\ProductController;
+use app\controller\UsersController;
+
 class Bakery
 {
     public function __construct()
@@ -19,16 +22,24 @@ class Bakery
 
                     if ($action == 'new')
                         (new ProductController())->create();
-                    elseif ($action = 'list')
+                    elseif ($action == 'list')
                         (new ProductController())->list();
                     break;
                 case 'product_history':
 
-                    if ($action == 'new'){
+                    if ($action == 'new') {
                         (new ProductHistoryController())->create();
+                    } elseif ($action == 'list') {
+                        (new ProductHistoryController())->list();
                     }
-                    elseif ($action = 'list'){
-                        (new ProductHistoryController())->list();}
+                    break;
+                case 'users':
+
+                    if ($action == 'new') {
+                        (new UsersController())->create();
+                    } elseif ($action == 'list') {
+                        (new UsersController())->list();
+                    }
                     break;
             }
         } elseif
@@ -38,7 +49,7 @@ class Bakery
                 case 'product':
 
                     if ($action == 'create') {
-                        $this->show((new ProductController())->store());
+                        (new ProductController())->store();
 
                         break;
                     }
@@ -46,18 +57,20 @@ class Bakery
                 case 'product_history':
 
                     if ($action == 'create') {
-                        $this->show((new ProductHistoryController())->store());
+                        (new ProductHistoryController())->store();
+
+                        break;
+                    }
+                    break;
+                case 'users':
+
+                    if ($action == 'create') {
+                        (new UsersController())->store();
 
                         break;
                     }
                     break;
             }
         }
-
     }
-        private
-        function show(string $text)
-        {
-            echo $text;
-        }
-    }
+}

@@ -2,19 +2,20 @@
 
 namespace app\model;
 
-    use app\model\interfaces\Destroyable;
-    use app\model\interfaces\Manageable;
 
-class ProductHistory extends CoreModel implements Manageable, Destroyable
+use app\model\interfaces\Destroyable;
+use app\model\interfaces\Manageable;
+
+class Users extends CoreModel implements Manageable, Destroyable
 {
 
-    protected $table = 'bakery_products_history';
+    protected $table = 'bakery_users';
     public function create(array $data)
     {
-
+        //print_r($data);
+        //die();
         $query = $this->generateInsertQuery($data, true);
-        print_r($this->query($query));
-
+        $this->query($query);
     }
     public function delete()
     {
@@ -24,5 +25,9 @@ class ProductHistory extends CoreModel implements Manageable, Destroyable
     public function destroy()
     {
         // TODO: Implement destroy() method.
+    }
+
+    public function echoOutput()
+    {
     }
 }

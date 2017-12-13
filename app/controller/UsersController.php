@@ -3,35 +3,29 @@
 
 namespace app\controller;
 
-use app\model\Product;
+use app\model\Users;
 
-class ProductController
+class UsersController
+{public function create()
 {
-    public function create()
-    {
-        $template = new TemplateEngineController('new-product');
-        $template->echoOutput();
-        //(new TemplateEngineController('new-product'))->echoOutput;
-    }
+    $template = new TemplateEngineController('new-users');
+    $template->echoOutput();
+    //(new TemplateEngineController('new-product'))->echoOutput;
+}
 
     public function store()
     {
-
-        //Product::create($_POST);
-
-        //(new Product())->($_POST);
-
-        $model = new Product();
+        $model = new Users();
         $model->create($_POST);
 
-        header('Location: ?view=product&action=list');
+        header('Location: ?view=users&action=list');
         exit;
 
     }
 
     public function list()
     {
-        $model = new Product();
+        $model = new Users();
         $result = $model->list();
         $header = '';
         $data = '';
@@ -60,4 +54,6 @@ class ProductController
         $template->echoOutput();
 
     }
+
+
 }
