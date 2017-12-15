@@ -6,7 +6,12 @@ namespace app\controller;
 use app\model\Users;
 
 class UsersController
-{public function create()
+{
+    public function login() {
+        (new TemplateEngineController('login'))->echoOutput();
+    }
+
+    public function create()
 {
     $template = new TemplateEngineController('new-users');
     $template->echoOutput();
@@ -15,8 +20,12 @@ class UsersController
 
     public function store()
     {
+
+        $data = $_POST;
+        $data['password'] = sha1($data['password']. SALT);
+
         $model = new Users();
-        $model->create($_POST);
+        $model->create($data);
 
         header('Location: ?view=users&action=list');
         exit;
@@ -53,6 +62,36 @@ class UsersController
 
         $template->echoOutput();
 
+    }
+
+    public function auth()
+    {
+        $data = $_POST;
+
+        $data['password'] = sha1($data['password']. SALT);
+        $model = new Users();
+
+        $result = $model->auth($data);
+
+        //TODO check if result kas any rows
+
+        foreach ($result as $key => $value)
+        setcookie('user', $value['id'], time()+3600);
+        header('Location:?view=product_history&action=new');
+    }
+
+    public function isLogged()
+    {
+        if(isset($_COOKIE['user'])) {
+
+            $model = new Users();
+            $result = $model->find($_COOKIE['user']);
+
+            if ($result->num_rows != 1)
+                die('Please login!');
+        }
+        else
+            die('Please login!');
     }
 
 

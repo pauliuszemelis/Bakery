@@ -13,3 +13,5 @@ include ('app\model\CoreModel.php');
 include ('app\model\Product.php');
 include ('app\model\productHistory.php');
 include ('app\model\Users.php');
+
+define ("SALT", "Labas vakaras brangioji");
