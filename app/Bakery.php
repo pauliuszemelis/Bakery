@@ -31,6 +31,8 @@ class Bakery
                         (new ProductController())->create();
                     elseif ($action == 'list')
                         (new ProductController())->list();
+                    elseif ($action == 'edit')
+                        (new ProductController())->edit();
                     break;
                 case 'product_history':
                     if ($action == 'new') {
