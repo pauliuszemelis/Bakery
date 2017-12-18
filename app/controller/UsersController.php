@@ -73,7 +73,8 @@ class UsersController
 
         $result = $model->auth($data);
 
-        //TODO check if result kas any rows
+        if ($result->num_rows != 1)
+            die('Please check login or password!');
 
         foreach ($result as $key => $value)
         setcookie('user', $value['id'], time()+3600);
@@ -88,7 +89,8 @@ class UsersController
             $result = $model->find($_COOKIE['user']);
 
             if ($result->num_rows != 1)
-                die('Please login!');
+                die('Please check login or password!');
+            setcookie('user', $_COOKIE['user'], time()+3600);
         }
         else
             die('Please login!');
