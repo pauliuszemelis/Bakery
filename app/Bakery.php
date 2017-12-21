@@ -17,9 +17,6 @@ class Bakery
         die();
     }
 
-
-
-
         $view = $_GET['view'];
         $action = $_GET['action'];
 
@@ -59,7 +56,10 @@ class Bakery
                     (new UsersController())->isLogged();
                     if ($action == 'create') {
                         (new ProductController())->store();
-
+                        break;
+                    }
+                    if ($action == 'update') {
+                        (new ProductController())->update();
                         break;
                     }
                     break;
@@ -67,7 +67,6 @@ class Bakery
                     (new UsersController())->isLogged();
                     if ($action == 'create') {
                         (new ProductHistoryController())->store();
-
                         break;
                     }
                     break;
@@ -79,7 +78,6 @@ class Bakery
                     }
                     elseif ($action == 'auth')   {
                         (new UsersController())->auth();
-
                         break;
                     }
                     break;

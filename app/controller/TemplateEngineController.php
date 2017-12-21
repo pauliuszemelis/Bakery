@@ -5,9 +5,6 @@ namespace app\controller;
 
 class TemplateEngineController
 {
-    /**
-     * @var string
-     */
     private $viewName;
 
     private $values = [];
@@ -18,7 +15,7 @@ class TemplateEngineController
         $this->viewName = "app/view/tpl/$viewName.tpl";
     }
 
-    public function set (string $key, string $value) {
+    public function set (string $key, string $value = null ) {
         $this->values[$key] = $value;
     }
 

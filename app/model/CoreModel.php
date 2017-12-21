@@ -25,7 +25,7 @@ class CoreModel
         $this->conn = mysqli_connect($this->servername, $this->username, $this->password, $this->dbname);
 
         if (!$this->conn) {
-            die("Not so much success conecting...");
+            die("Not so much success connecting...");
         }
 
         $this->conn->set_charset('utf8mb4');
@@ -77,6 +77,23 @@ class CoreModel
 
     public function find (string $id){
         $query = "SELECT * FROM `".$this->table ."` WHERE `deleted_at` IS NULL AND `id`= '$id'";
+        return $this->query($query);
+
+    }
+    public function update ($id) {
+
+        $data = $_POST;
+        $options = '';
+
+        foreach ($data as $key => $value) {
+
+            $options .= "`$key` = '$value', ";
+
+        }
+
+        $options = rtrim($options, ", ");
+
+        $query = "UPDATE `" . $this->table . "` SET " . $options . " WHERE `id`='$id'";
         return $this->query($query);
 
     }
